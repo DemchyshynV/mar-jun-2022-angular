@@ -1,3 +1,6 @@
 <div class="bg">
-  {{user.id}}.) {{user.name}} -- {{user.email}}
+<!--  <a routerLink="{{user.id}}" [state]="{user}">{{user.id}}.) {{user.name}} &#45;&#45; {{user.email}}</a>-->
+  {{user.id}}.) {{user.name}} {{user.email}}
+  <button (click)="getDetails()">getDetails</button>
+  <button (click)="lift()">lift</button>
 </div>
