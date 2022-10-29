@@ -1,0 +1,16 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: blue;
+}
+
+a{
+  text-decoration: none;
+  color: snow;
+}
+
+.active{
+  color: red;
+}
