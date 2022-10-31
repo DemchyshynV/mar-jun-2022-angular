@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <mat-form-field appearance="legacy">
+    <mat-label>Model</mat-label>
+    <input matInput type="text" formControlName="model">
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>Price</mat-label>
+    <input matInput type="text" placeholder="price" formControlName="price">
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>Year</mat-label>
+    <input type="text" matInput placeholder="year" formControlName="year">
+  </mat-form-field>
+  <!--  <span *ngIf="form.controls['model']['errors']">{{form.controls['model']['errors']|json}}</span>-->
+  <!--  <span *ngIf="form.controls['price']['errors']">{{form.controls['price']['errors']|json}}</span>-->
+  <!--  <span *ngIf="form.controls['year']['errors']">{{form.controls['year']['errors']|json}}</span>-->
+  <!--  <button [disabled]="form.invalid" (click)="save()">save</button>-->
+  <button mat-raised-button color="primary" (click)="save()">{{updateCar ? 'update' : 'save'}}</button>
+</form>
+<hr>
+<app-car *ngFor="let car of cars" [car]="car" (carForUpdate)="lift($event)"
+         (carIdForDelete)="deleteById($event)"></app-car>
