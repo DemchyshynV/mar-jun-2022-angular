@@ -1,18 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  constructor(private router: Router, private dialog: MatDialog) {
-  }
-
-  ngOnInit(): void {
-    this.router.events.subscribe(() => {
-      this.dialog.closeAll();
-    })
-  }
+export class AppComponent {
+  title = 'untitled3';
+  check = false
 }
