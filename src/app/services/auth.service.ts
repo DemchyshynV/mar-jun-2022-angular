@@ -32,6 +32,10 @@ export class AuthService {
     )
   }
 
+  register(user: IAuth): Observable<IAuth> {
+    return this.httpClient.post<IAuth>(urls.user.create, user);
+  }
+
   getUserName(): Observable<string | null> {
     return this._authUser.asObservable();
   }

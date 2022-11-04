@@ -9,6 +9,7 @@ import {ICar} from '../../interfaces';
 export class CarComponent implements OnInit {
   @Input()
   car: ICar
+  panelOpenState=false;
 
   constructor() {
   }

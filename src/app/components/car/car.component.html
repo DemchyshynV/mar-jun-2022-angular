@@ -1,1 +1,21 @@
-<div>{{car|json}}</div>
+<mat-expansion-panel (opened)="panelOpenState = true"
+                     (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{car.model}}
+    </mat-panel-title>
+    <mat-panel-description>
+      <span *ngIf="panelOpenState;else carInfo">Hello</span>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div>
+    <div>id: {{car.id}}</div>
+    <div>model: {{car.model}}</div>
+    <div>price: {{car.price}}</div>
+    <div>year: {{car.year}}</div>
+  </div>
+</mat-expansion-panel>
+
+<ng-template #carInfo>
+  id: {{car.id}} model: {{car.model}} price: {{car.price}} year: {{car.year}}
+</ng-template>

@@ -6,6 +6,7 @@ import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {CarsComponent} from './components/cars/cars.component';
 import {AuthGuard} from './guards';
+import {CarResolver} from './services/resolvers/car.resolver';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
       {path: '', redirectTo: 'login', pathMatch: 'full'},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
-      {path: 'cars', canActivate: [AuthGuard], component: CarsComponent}
+      {path: 'cars', canActivate: [AuthGuard], runGuardsAndResolvers:'paramsOrQueryParamsChange',resolve: {data: CarResolver}, component: CarsComponent}
     ]
   }
 ];
